@@ -23,13 +23,12 @@ import { SharedElement } from 'react-native-shared-element';
 import { ImagePath } from '../utils/imagePath';
 import { horizontalScale, verticalScale } from '../utils/Scale';
 
-
-
-const OVERFLOW_HEIGHT = 100;
+const OVERFLOW_HEIGHT = 110;
 const SPACING = 10;
 const ITEM_WIDTH = width * 0.76;
 const ITEM_HEIGHT = ITEM_WIDTH * 1.7;
 const VISIBLE_ITEMS = 3;
+var accurateIndex = 0
 
 const OverflowItems = ({ data, scrollXAnimated }) => {
     const inputRange = [-1, 0, 1];
@@ -44,7 +43,7 @@ const OverflowItems = ({ data, scrollXAnimated }) => {
                     source={ImagePath.BACKICON}
                     style={styles.backImg}
                 />
-                <Text style={styles.titleList}>List</Text>
+                <Text style={styles.titleList}>LIST</Text>
             </View>
             <Animated.View style={{ transform: [{ translateY }] }}>
                 {data.map((item, index) => {
@@ -60,8 +59,6 @@ const OverflowItems = ({ data, scrollXAnimated }) => {
                                         style={styles.locationImg}
                                     />
                                     <Text style={[styles.location]}>
-
-
                                         {item.location}
                                     </Text>
                                 </View>
@@ -80,19 +77,12 @@ export default function EventsList(props) {
     const scrollXIndex = React.useRef(new Animated.Value(0)).current;
     const scrollXAnimated = React.useRef(new Animated.Value(0)).current;
     const [index, setIndex] = React.useState(0);
+    const [currentIndex, setCurrentIndex] = React.useState(0);
     const setActiveIndex = React.useCallback((activeIndex) => {
         scrollXIndex.setValue(activeIndex);
         setIndex(activeIndex);
     });
 
-    React.useEffect(() => {
-        if (index === data.length - VISIBLE_ITEMS - 1) {
-            // get new data
-            // fetch more data
-            const newData = [...data, ...data];
-            setData(newData);
-        }
-    });
 
     React.useEffect(() => {
         Animated.spring(scrollXAnimated, {
@@ -106,6 +96,7 @@ export default function EventsList(props) {
             key='left'
             direction={Directions.LEFT}
             onHandlerStateChange={(ev) => {
+                accurateIndex = index;
                 if (ev.nativeEvent.state === State.END) {
                     if (index === data.length - 1) {
                         return;
@@ -118,6 +109,7 @@ export default function EventsList(props) {
                 key='right'
                 direction={Directions.RIGHT}
                 onHandlerStateChange={(ev) => {
+                    accurateIndex = index;
                     if (ev.nativeEvent.state === State.END) {
                         if (index === 0) {
                             return;
@@ -157,7 +149,7 @@ export default function EventsList(props) {
                             );
                         }}
                         renderItem={({ item, index }) => {
-
+                            // const acInd = currentIndex
                             const inputRange = [index - 1, index, index + 1];
                             const translateX = scrollXAnimated.interpolate({
                                 inputRange,
@@ -189,15 +181,15 @@ export default function EventsList(props) {
                                     <TouchableOpacity
                                         activeOpacity={.9}
                                         onPress={() => {
-                                            console.log("Index ==== ", index)
+                                            console.log("Pressed ===")
                                             props.navigation.navigate("eventsDetails", {
-                                                item: events[index]
+                                                item: events[accurateIndex],
+                                                indexes: index
                                             })
 
                                         }}
                                     >
                                         <SharedElement id={`item.${item.key}.image`}>
-
                                             <Image
                                                 source={{ uri: item.poster }}
                                                 style={{
@@ -274,7 +266,7 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
     },
     locitemContainerRow: {
-        height: verticalScale(20),
+        height: verticalScale(25),
         width: horizontalScale(115),
         flexDirection: "row",
         alignItems: 'center',

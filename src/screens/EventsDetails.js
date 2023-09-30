@@ -18,8 +18,8 @@ const fadeInBottom = {
 }
 
 const EventsDetails = ({ props, navigation, route }) => {
-    const { item } = route.params
-
+    const { item, indexes } = route.params
+    console.log("Indexes ==== ", indexes, item)
     return (
         <View style={{ flex: 1 }}>
             <SharedElement id={`item.${item.key}.image`} style={[StyleSheet.absoluteFillObject]}>
@@ -48,7 +48,7 @@ const EventsDetails = ({ props, navigation, route }) => {
                 <Text style={styles.titleList}>Event Details</Text>
             </TouchableOpacity>
             <SharedElement id='general.bg' style={[StyleSheet.absoluteFillObject, { transform: [{ translateY: height * 0.3 }] }]}>
-                <View style={[StyleSheet.absoluteFillObject, { backgroundColor: "white", transform: [{ translateY: -height * 0.3 }], top: height * 0.7, padding: width * 0.05, borderTopLeftRadius: 16, borderTopRightRadius: 16 }]}>
+                <View style={[StyleSheet.absoluteFillObject, { backgroundColor: "white", transform: [{ translateY: -height * 0.3 }], top: height * 0.7, padding: width * 0.05 }]}>
                     <Animatable.Text
                         animation={fadeInBottom}
                         duration={400}
