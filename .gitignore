@@ -1,0 +1,36 @@
+# React Native specific
+node_modules/
+android/build/
+ios/build/
+android/app/build/
+ios/Pods/
+*.log
+npm-debug.log*
+yarn-error.log*
+*.iml
+.idea/
+.vscode/
+.DS_Store
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# macOS Finder files
+.AppleDouble
+.LSOverride
+Icon
+ehthumbs.db
+Thumbs.db

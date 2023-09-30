@@ -23,6 +23,23 @@
                     }
                 },
                 {
+                    "source": "/Users/alauddinkhan/Documents/TestProject/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "48",
+                        "endOffsets": "60"
+                    },
+                    "to": {
+                        "startLines": "698",
+                        "startColumns": "4",
+                        "startOffsets": "44503",
+                        "endColumns": "48",
+                        "endOffsets": "44547"
+                    }
+                },
+                {
                     "source": "/Users/alauddinkhan/.gradle/caches/transforms-3/3e0d478508575b75c79938eb5fb0fb04/transformed/jetified-startup-runtime-1.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -116,23 +133,6 @@
                     }
                 },
                 {
-                    "source": "/Users/alauddinkhan/Documents/LeagueXTest/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
-                    "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "156,262",
-                        "endColumns": "63,68",
-                        "endOffsets": "215,326"
-                    },
-                    "to": {
-                        "startLines": "661,662",
-                        "startColumns": "4,4",
-                        "startOffsets": "41901,41965",
-                        "endColumns": "63,68",
-                        "endOffsets": "41960,42029"
-                    }
-                },
-                {
                     "source": "/Users/alauddinkhan/.gradle/caches/transforms-3/8fac770e659683206d28c35b067abb41/transformed/jetified-drawee-2.6.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,141",
@@ -152,7 +152,7 @@
                     }
                 },
                 {
-                    "source": "/Users/alauddinkhan/Documents/LeagueXTest/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/alauddinkhan/Documents/TestProject/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
@@ -187,6 +187,23 @@
                         "endLines": "57,346,347,348,356,357,358,587,6431",
                         "endColumns": "55,58,47,55,74,75,71,65,24",
                         "endOffsets": "3301,22510,22558,22614,23300,23376,23448,37999,362748"
+                    }
+                },
+                {
+                    "source": "/Users/alauddinkhan/Documents/TestProject/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
+                    "from": {
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "156,262",
+                        "endColumns": "63,68",
+                        "endOffsets": "215,326"
+                    },
+                    "to": {
+                        "startLines": "661,662",
+                        "startColumns": "4,4",
+                        "startOffsets": "41901,41965",
+                        "endColumns": "63,68",
+                        "endOffsets": "41960,42029"
                     }
                 },
                 {
@@ -314,23 +331,6 @@
                         "startOffsets": "40601",
                         "endColumns": "49",
                         "endOffsets": "40646"
-                    }
-                },
-                {
-                    "source": "/Users/alauddinkhan/Documents/LeagueXTest/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "48",
-                        "endOffsets": "60"
-                    },
-                    "to": {
-                        "startLines": "698",
-                        "startColumns": "4",
-                        "startOffsets": "44503",
-                        "endColumns": "48",
-                        "endOffsets": "44547"
                     }
                 },
                 {

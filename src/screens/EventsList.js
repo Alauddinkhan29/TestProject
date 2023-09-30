@@ -157,7 +157,7 @@ export default function EventsList(props) {
                             );
                         }}
                         renderItem={({ item, index }) => {
-                            console.log("=== index in item ====", index)
+
                             const inputRange = [index - 1, index, index + 1];
                             const translateX = scrollXAnimated.interpolate({
                                 inputRange,
